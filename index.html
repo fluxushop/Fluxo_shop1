@@ -1,4 +1,4 @@
-from textwrap import dedent
+
 
 html = dedent("""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -65,8 +65,4 @@ document.getElementById('result').innerHTML="<b>🆔 ID:</b> "+uid+"<br><b>📦 
 <a href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1" target="_blank">👥 مجموعة واتساب</a>
 </p>/body>
 </html>""")
-
-path="/mnt/data/index.html"
-with open(path,"w",encoding="utf-8") as f:
-    f.write(html)
-print(path)
+    
