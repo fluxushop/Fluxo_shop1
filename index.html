@@ -1,63 +1,73 @@
-<script>
-const prices = {
-  "100":"0.99",
-  "210":"1.99",
-  "310":"2.99",
-  "520":"4.99",
-  "1060":"9.99",
-  "2180":"19.99",
-  "5600":"49.99",
-  "10000":"89.99",
-  "20000":"169.99",
-  "week":"1.99",
-  "month":"7.99"
-};
+<script>  
+const prices = {  
+  "100":"0.99",  
+  "210":"1.99",  
+  "310":"2.99",  
+  "520":"4.99",  
+  "1060":"9.99",  
+  "2180":"19.99",  
+  "5600":"49.99",  
+  "10000":"89.99",  
+  "20000":"169.99",  
+  "week":"1.99",  
+  "month":"7.99"  
+};  
+  
+function showPrice() {  
+    let uid = document.getElementById("uid").value.trim();  
+  
+    if(uid==""){  
+        alert("أدخل ID اللاعب");  
+        return;  
+    }  
+  
+    let product = document.getElementById("product").value;  
+  
+    let name = (product=="week")  
+      ? "العضوية الأسبوعية"  
+      : (product=="month")  
+      ? "العضوية الشهرية"  
+      : product + " 💎";  
+  
+    let price = prices[product];  
+  
+    document.getElementById("result").innerHTML =  
+    "<b>🆔 ID:</b> "+uid+  
+    "<br><b>📦 المنتج:</b> "+name+  
+    "<br><b>💰 السعر:</b> $"+price+  
+    "<br><br><button onclick='buyNow()'>🛒 شراء الآن</button>";  
+}  
+  
+function buyNow() {  
+    let uid = document.getElementById("uid").value;  
+    let product = document.getElementById("product").value;  
+  
+    let name = (product=="week")  
+      ? "العضوية الأسبوعية"  
+      : (product=="month")  
+      ? "العضوية الشهرية"  
+      : product + " 💎";  
+  
+    let price = prices[product];  
+  
+    let message =  
+    "مرحباً، أريد شراء " + name +  
+    "%0A🆔 ID: " + uid +  
+    "%0A💰 السعر: $" + price;  
+  
+    window.location.href =  
+    "https://wa.me/963951421872?text=" + message;  
+}  
+</script>  </body>  
+</html><input id="uid" type="text" placeholder="أدخل ID اللاعب">
 
-function showPrice() {
-    let uid = document.getElementById("uid").value.trim();
+<select id="product">
+  <option value="100">100 💎 - $0.99</option>
+  <option value="210">210 💎 - $1.99</option>
+  <option value="310">310 💎 - $2.99</option>
+  <option value="520">520 💎 - $4.99</option>
+</select>
 
-    if(uid==""){
-        alert("أدخل ID اللاعب");
-        return;
-    }
+<button onclick="showPrice()">عرض السعر</button>
 
-    let product = document.getElementById("product").value;
-
-    let name = (product=="week")
-      ? "العضوية الأسبوعية"
-      : (product=="month")
-      ? "العضوية الشهرية"
-      : product + " 💎";
-
-    let price = prices[product];
-
-    document.getElementById("result").innerHTML =
-    "<b>🆔 ID:</b> "+uid+
-    "<br><b>📦 المنتج:</b> "+name+
-    "<br><b>💰 السعر:</b> $"+price+
-    "<br><br><button onclick='buyNow()'>🛒 شراء الآن</button>";
-}
-
-function buyNow() {
-    let uid = document.getElementById("uid").value;
-    let product = document.getElementById("product").value;
-
-    let name = (product=="week")
-      ? "العضوية الأسبوعية"
-      : (product=="month")
-      ? "العضوية الشهرية"
-      : product + " 💎";
-
-    let price = prices[product];
-
-    let message =
-    "مرحباً، أريد شراء " + name +
-    "%0A🆔 ID: " + uid +
-    "%0A💰 السعر: $" + price;
-
-    window.location.href =
-    "https://wa.me/963951421872?text=" + message;
-}
-</script>
-</body>
-</html>
+<div id="result"></div>
