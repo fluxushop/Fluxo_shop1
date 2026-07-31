@@ -193,97 +193,7 @@ target="_blank">
 
 "<button onclick='buyNow()'>🛒 شراء الآن</button>";
 
-}
 
-function buyNow(){
-
-let uid=document.getElementById("uid").value;
-
-let product=document.getElementById("product").value;
-
-let name="";
-
-if(product=="week"){
-
-name="العضوية الأسبوعية";
-
-}else if(product=="month"){
-
-name="العضوية الشهرية";
-
-}else{
-
-name=product+" 💎";
-
-}
-
-let price=prices[product];
-
-let message=
-"مرحباً، أريد شراء من FLUXO SHOP%0A%0A"+
-"🆔 ID اللاعب: "+uid+"%0A"+
-"📦 المنتج: "+name+"%0A"+
-"💰 السعر: $"+price+"%0A%0A"+
-"شكراً لكم";
-
-window.open(
-"https://wa.me/963951421872?text="+message,
-"_blank"
-);
-document.getElementById("result").innerHTML += `
-
-<hr>
-
-<h3>اختر طريقة التواصل</h3>
-
-<a class="btn"
-href="https://wa.me/963951421872?text=${message}"
-target="_blank">
-
-📱 إرسال الطلب عبر واتساب
-
-</a>
-
-<a class="btn"
-href="https://instagram.com/Fluxo_shop1"
-target="_blank">
-
-📷 حساب إنستغرام
-
-</a>
-
-<a class="btn"
-href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1"
-target="_blank">
-
-👥 مجموعة واتساب
-
-</a>
-
-`;
-
-}
-
-function formatPrice(product){
-
-return prices[product] || "غير متوفر";
-
-}
-
-function
-  function resetForm(){
-
-document.getElementById("uid").value="";
-
-document.getElementById("product").selectedIndex=0;
-
-document.getElementById("result").innerHTML="";
-
-}
-
-window.onload=function(){
-
-document.getElementById("result").innerHTML=
 
 "<p>🔥 أهلاً بك في <b>FLUXO SHOP</b></p>" +
 
@@ -326,4 +236,14 @@ target="_blank">
 📱 إرسال إثبات الدفع
 </a>
 
+  </div><div class="card">
+    <h2>💳 الدفع عبر الباركود</h2>
+
+    <img src="file_000000003258821095aec94bf9d0d72a.jpg"
+         alt="QR Code"
+         style="width:280px;max-width:100%;display:block;margin:auto;border-radius:15px;">
+
+    <br>
+
+    <p>امسح الباركود لإتمام عملية الدفع.</p>
   </div>
