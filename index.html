@@ -6,27 +6,36 @@
 <title>FLUXO SHOP</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
 background:#111;
 color:#fff;
-font-family:Arial,sans-serif;
-text-align:center;
-margin:0;
 }
 
 header{
 background:#ff6600;
 padding:20px;
-font-size:30px;
+text-align:center;
+font-size:32px;
 font-weight:bold;
 }
 
 .container{
-max-width:500px;
+max-width:700px;
 margin:30px auto;
-padding:20px;
 background:#222;
+padding:20px;
 border-radius:15px;
+}
+
+h2{
+margin-bottom:20px;
 }
 
 input,select{
@@ -38,15 +47,25 @@ border-radius:10px;
 font-size:18px;
 }
 
-button{
+button,.btn{
+display:block;
 width:100%;
 padding:15px;
+margin-top:10px;
 background:#25D366;
-color:#fff;
+color:white;
+text-decoration:none;
 border:none;
 border-radius:10px;
-font-size:20px;
+font-size:18px;
 cursor:pointer;
+}
+
+.card{
+background:#333;
+padding:20px;
+border-radius:15px;
+margin-top:20px;
 }
 
 .result{
@@ -62,114 +81,66 @@ font-size:20px;
 
 <div class="container">
 
-<h2>شحن فري فاير</h2>
+<h2>💎 شحن Free Fire</h2>
 
-<input type="text" id="uid" placeholder="أدخل ID فري فاير">
+<input type="text" id="uid" placeholder="أدخل ID اللاعب">
 
-<select id="diamonds">
-<option value="100">100 💎</option>
-<option value="310">310 💎</option>
-<option value="520">520 💎</option>
-<option value="1060">1060 💎</option>
-<option value="2180">2180 💎</option>
-</select>
+<select id="product">
 
-<button onclick="checkPlayer()">تحقق</button>
+<option value="100">100 💎 - $0.99</option>
+<option value="210">210 💎 - $1.99</option>
+<option value="310">310 💎 - $2.99</option>
+<option value="520">520 💎 - $<a class="btn" href="https://wa.me/963951421872?text=مرحبًا، أريد شراء المنتج المحدد">
+📱 اطلب عبر واتساب
+</a>
 
-<div class="result">
-<p id="playerName"></p>
-<p id="price"></p>
-</div>
+<a class="btn" href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1" target="_blank">
+👥 انضم إلى مجموعة واتساب
+</a>
 
-<a href="https://wa.me/963951421872">
-<button style="margin-top:15px;">إرسال الطلب عبر واتساب</button>
+<a class="btn" href="https://instagram.com/Fluxo_shop1" target="_blank">
+📷 تابعنا على إنستغرام
 </a>
 
 </div>
 
 <script>
 
-const prices={
-100:0.99,
-310:2.99,
-520:4.99,
-1060:9.99,
-2180:19.99
+const prices = {
+"100":"0.99",
+"210":"1.99",
+"310":"2.99",
+"520":"4.99",
+"1060":"9.99",
+"2180":"19.99",
+"5600":"49.99",
+"10000":"89.99",
+"20000":"169.99",
+"week":"1.99",
+"month":"7.99"
 };
 
-function checkPlayer(){
+function showPrice(){
 
-let uid=document.getElementById("uid").value;
-let diamonds=document.getElementById("diamonds").value;
+let uid = document.getElementById("uid").value;
+let product = document.getElementById("product").value;
 
 if(uid==""){
-alert("أدخل ID أولاً");
+alert("الرجاء إدخال ID اللاعب");
 return;
 }
 
-document.getElementById("playerName").innerHTML=
-"ID اللاعب: "+uid;
+let text="";
 
-document.getElementById("price").innerHTML=
-"السعر: $"+prices[diamonds];
-
+if(product=="week"){
+text="💳 العضوية الأسبوعية";
+}else if(product=="month"){
+text="👑 العضوية الشهرية";
+}else{
+text=product+" 💎";
 }
 
-</script>
-<div class="card">
-  <h2>💳 العضوية الأسبوعية</h2>
-  <p>100 💎 يوميًا لمدة 7 أيام</p>
-  <h3>$1.99</h3>
-  <a class="btn" href="https://wa.me/963951421872?text=أريد شراء العضوية الأسبوعية">شراء</a>
-</div>
-
-<div class="card">
-  <h2>👑 العضوية الشهرية</h2>
-  <p>60 💎 يوميًا لمدة 30 يومًا</p>
-  <h3>$7.99</h3>
-  <a class="btn" href="https://wa.me/963951421872?text=أريد شراء العضوية الشهرية">شراء</a>
-</div>
-
-<div class="card">
-  <h2>⭐ العضوية الأسبوعية + الشهرية</h2>
-  <p>عرض خاص</p>
-  <h3>$9.49</h3>
-  <a class="btn" href="https://wa.me/963951421872?text=أريد شراء العرض">شراء</a>
-</div>
-</body>
-</html><div class="card">
-  <h2>💎 شحن فري فاير</h2>
-
-  <input type="text" id="uid" placeholder="أدخل ID اللاعب">
-
-  <br><br>
-
-  <select id="product">
-    <option value="100">100 💎 - $0.99</option>
-    <option value="310">310 💎 - $2.99</option>
-    <option value="520">520 💎 - $4.99</option>
-    <option value="1060">1060 💎 - $9.99</option>
-    <option value="2180">2180 💎 - $19.99</option>
-    <option value="week">💳
-      Update website
-<a class="btn" href="https://instagram.com/Fluxo_shop1" target="_blank">
-📷 تابعنا على إنستغرام
-</a>
-Update website
-  </<a class="btn" href="https://instagram.com/Fluxo_shop1" target="_blank">
-📷 تابعنا على إنستغرام
-  </a>>
-      <a class="btn" href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1" target="_blank">
-👥 انضم إلى مجموعة واتساب
-      </a>
-<br><br>
-
-<a class="btn" href="https://instagram.com/Fluxo_shop1" target="_blank">
-📷 تابعنا على إنستغرام
-</a>
-
-<br><br>
-
-<a class="btn" href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1" target="_blank">
-👥 انضم إلى مجموعة واتساب
-</a>
+document.getElementById("result").innerHTML=
+"<b>🆔 ID اللاعب:</b> "+uid+
+"<br><br><b>📦 المنتج:</b> "+text+
+"<br><br><b>💰 السعر:</b>
