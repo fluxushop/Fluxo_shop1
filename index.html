@@ -1,82 +1,53 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUXO SHOP</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-<script src="script.js"></script>
-</body>
-</html>
-<header class="header">
-
-<div class="logo">
-🔥 FLUXO SHOP
+https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap
+<div class="card">
+<img src="https://i.imgur.com/3k9d6wF.png">
+<h3>1060 💎</h3>
+<p>$9.99</p>
+<button onclick="buy('1060 💎','$9.99')">شراء</button>
 </div>
 
-<nav>
-
-<a href="#shop">المتجر</a>
-
-<a href="#memberships">العضويات</a>
-
-<a href="#payment">الدفع</a>
-
-<a href="#contact">تواصل معنا</a>
-
-  <div class="card" id="memberships">
-
-<h2>👑 عضويات Free Fire</h2>
-
-<div class="membership">
-
-<h3>💳 العضوية الأسبوعية</h3>
-
-<p>100 💎 يومياً لمدة 7 أيام</p>
-
-<span>$1.99</span>
-
+<div class="card">
+<img src="https://i.imgur.com/3k9d6wF.png">
+<h3>2180 💎</h3>
+<p>$18.99</p>
+<button onclick="buy('2180 💎','$18.99')">شراء</button>
 </div>
 
-<div class="membership">
+<div class="card">
+<img src="https://i.imgur.com/3k9d6wF.png">
+<h3>العضوية الأسبوعية</h3>
+<p>$1.99</p>
+<button onclick="buy('العضوية الأسبوعية','$
+  <section class="contact">
 
-<h3>👑 العضوية الشهرية</h3>
+<h2>تواصل معنا</h2>
 
-<p>60 💎 يومياً لمدة 30 يوماً</p>
+<a href="https://wa.me/963951421872" class="btn">
+📱 واتساب
+</a>
 
-<span>$7.99</span>
+<a href="https://instagram.com/Fluxo_shop1" class="btn">
+📷 إنستغرام
+</a>
 
-</div>
+<a href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1" class="btn">
+👥 مجموعة واتساب
+</a>
 
-</div>
+</section>
 
-<div class="card" id="payment">
-
-<h2>💳 الدفع عبر الباركود</h2>
-
-<img
-src="file_000000003258821095aec94bf9d0d72a.jpg"
-class="qr"
-alt="QR Code">
+<footer>
 
 <p>
+© 2026 FLUXO SHOP
+</p>
 
-بعد الدفع أرسل صورة الإ
-  <footer>
+</footer>
 
-<p>© 2026 FLUXO SHOP - جميع الحقوق محفوظة</p>
-*{
+<script src="script.js"></script>
+
+</body>
+</html>*{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -88,64 +59,53 @@ background:#0f172a;
 color:#fff;
 }
 
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:#111827;
-position:sticky;
-top:0;
-z-index:999;
+header{
+background:linear-gradient(90deg,#2563eb,#0ea5e9);
+padding:25px;
+text-align:center;
 }
 
-.logo{
-font-size:30px;
-font-weight:bold;
-color:#38bdf8;
+header h1{
+font-size:35px;
 }
 
-nav a{
-color:#fff;
-text-decoration:none;
-margin:0 10px;
-font-size:17px;
-transition:.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
+header p{
+margin-top:10px;
+font-size:18px;
 }
 
 .hero{
+padding:40px;
 text-align:center;
-padding:70px 20px;
-background:linear-gradient(135deg,#2563eb,#06b6d4);
 }
 
-.hero h1{
-font-size:42px;
-margin-bottom:15px;
+.container{
+width:95%;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
 }
 
-.hero p{
-font-size:20px;
-margin-bottom:25px;
+.card{
+background:#1e293
+  const phone = "963951421872";
+
+function buy(product, price){
+
+let uid = prompt("أدخل ID اللاعب");
+
+if(uid==null || uid==""){
+alert("يجب إدخال ID اللاعب");
+return;
 }
 
-.hero-btn{
-display:inline-block;
-padding:15px 35px;
-background:#22c55e;
-color:#fff;
-text-decoration:none;
-border-radius:10px;
-font-size:20px;
-font-weight:bold;
-}
-</footer>
+let message =
+`مرحباً، أريد شراء من FLUXO SHOP
 
-<script src="script.js"></script>
+🆔 ID اللاعب: ${uid}
 
-</body>
-</html>
+📦 المنتج: ${product
+  
