@@ -1,122 +1,63 @@
-
-
-html = dedent("""<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUXO SHOP</title>
-<style>
-body{font-family:Arial;background:#111;color:#fff;margin:0}
-header{background:#ff6600;padding:18px;text-align:center;font-size:30px;font-weight:bold}
-.container{max-width:700px;margin:20px auto;background:#222;padding:20px;border-radius:12px}
-input,select,button,a.btn{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:none;font-size:16px;box-sizing:border-box}
-button,a.btn{background:#25D366;color:#fff;text-decoration:none;display:block;text-align:center}
-.card{background:#333;padding:15px;border-radius:10px;margin-top:15px}
-</style>
-</head>
-<body>
-<header>FLUXO SHOP</header>
-<div class="container">
-<h2>شحن Free Fire</h2>
-<input id="uid" placeholder="أدخل ID اللاعب">
-<select id="product">
-<option value="100">100 💎 - $0.99</option>
-<option value="210">210 💎 - $1.99</option>
-<option value="310">310 💎 - $2.99</option>
-<option value="520">520 💎 - $4.99</option>
-<option value="1060">1060 💎 - $9.99</option>
-<option value="2180">2180 💎 - $19.99</option>
-<option value="5600">5600 💎 - $49.99</option>
-<option value="10000">10000 💎 - $89.99</option>
-<option value="20000">20000 💎 - $169.99</option>
-<option value="week">💳 العضوية الأسبوعية - $1.99</option>
-<option value="month">👑 العضوية الشهرية - $7.99</option>
-</select>
-<button onclick="showPrice()">عرض السعر</button>
-<div class="card" id="result"></div>
-<a class="btn" href="https://wa.me/963951421872">📱 التواصل عبر واتساب</a>
-<a class="btn" href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1">👥 مجموعة واتساب</a>
-<a class="btn" href="https://instagram.com/Fluxo_shop1">📷 Instagram: Fluxo_shop1</a>
-</div>
 <script>
-const prices={"100":"0.99","210":"1.99","310":"2.99","520":"4.99","1060":"9.99","2180":"19.99","5600":"49.99","10000":"89.99","20000":"169.99","week":"1.99","month":"7.99"};
-function showPrice(){
-let uid=document.getElementById('uid').value.trim();
-if(!uid){alert('أدخل ID اللاعب');return;}
-let p=document.getElementById('product').value;
-let name=(p=="week")?"العضوية الأسبوعية":(p=="month")?"العضوية الشهرية":p+" 💎";
-document.getElementById('result').innerHTML="<b>🆔 ID:</b> "+uid+"<br><b>📦 المنتج:</b> "+name+"<br><b>💰 السعر:</b> $"+prices[p];
-}
-</script>
-<<hr>
+const prices = {
+  "100":"0.99",
+  "210":"1.99",
+  "310":"2.99",
+  "520":"4.99",
+  "1060":"9.99",
+  "2180":"19.99",
+  "5600":"49.99",
+  "10000":"89.99",
+  "20000":"169.99",
+  "week":"1.99",
+  "month":"7.99"
+};
 
-<h3>تابعنا</h3>
+function showPrice() {
+    let uid = document.getElementById("uid").value.trim();
 
-<p>
-<a href="https://wa.me/963951421872" target="_blank">📱 واتساب</a>
-</p>
-
-<p>
-<a href="https://instagram.com/Fluxo_shop1" target="_blank">📷 إنستغرام</a>
-</p>
-
-<p>
-<a href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1" target="_blank">👥 مجموعة واتساب</a>
-</p>
-</body><button onclick="checkPlayer()">شراء الجواهر</button><script>
-function checkPlayer() {
-  let uid = document.getElementById("uid").value;
-  let diamonds = document.getElementById("diamonds").value;
-
-  if (uid == "") {
-    alert("أدخل ID اللاعب");
-    return;
-  }
-
-  let prices = {
-    100:"0.99",
-    310:"2.99",
-    520:"4.99",
-    1060:"9.99",
-    2180:"19.99"
-  };
-
-  let message =
-  "مرحباً، أريد شراء جواهر فري فاير.%0A" +
-  "ID اللاعب: " + uid + "%0A" +
-  "عدد الجواهر: " + diamonds + " 💎%0A" +
-  "السعر: $" + prices[diamonds];
-
-  window.location.href =
-  "https://wa.me/963951421872?text=" + message;
-}
-        </script><button onclick="checkPlayer()">شراء الآن</button>
-</body><script>
-function checkPlayer() {
-    let uid = document.getElementById("uid").value;
-    let diamonds = document.getElementById("diamonds").value;
-
-    if (uid == "") {
+    if(uid==""){
         alert("أدخل ID اللاعب");
         return;
     }
 
-    let prices = {
-        100:"0.99",
-        310:"2.99",
-        520:"4.99",
-        1060:"9.99",
-        2180:"19.99"
-    };
+    let product = document.getElementById("product").value;
+
+    let name = (product=="week")
+      ? "العضوية الأسبوعية"
+      : (product=="month")
+      ? "العضوية الشهرية"
+      : product + " 💎";
+
+    let price = prices[product];
+
+    document.getElementById("result").innerHTML =
+    "<b>🆔 ID:</b> "+uid+
+    "<br><b>📦 المنتج:</b> "+name+
+    "<br><b>💰 السعر:</b> $"+price+
+    "<br><br><button onclick='buyNow()'>🛒 شراء الآن</button>";
+}
+
+function buyNow() {
+    let uid = document.getElementById("uid").value;
+    let product = document.getElementById("product").value;
+
+    let name = (product=="week")
+      ? "العضوية الأسبوعية"
+      : (product=="month")
+      ? "العضوية الشهرية"
+      : product + " 💎";
+
+    let price = prices[product];
 
     let message =
-    "مرحباً، أريد شراء جواهر فري فاير%0A" +
-    "ID اللاعب: " + uid + "%0A" +
-    "عدد الجواهر: " + diamonds + " 💎%0A" +
-    "السعر: $" + prices[diamonds];
+    "مرحباً، أريد شراء " + name +
+    "%0A🆔 ID: " + uid +
+    "%0A💰 السعر: $" + price;
 
     window.location.href =
     "https://wa.me/963951421872?text=" + message;
 }
 </script>
+</body>
+</html>
