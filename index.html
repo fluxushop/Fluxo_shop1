@@ -1,4 +1,4 @@
-
+تع
 
 html = dedent("""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -63,5 +63,32 @@ document.getElementById('result').innerHTML="<b>🆔 ID:</b> "+uid+"<br><b>📦 
 
 <p>
 <a href="https://chat.whatsapp.com/EVCtdxBiC0F3ngzlKnjVmr?s=cl&p=a&ilr=1" target="_blank">👥 مجموعة واتساب</a>
-</p>/body>
-    
+</p>
+</body><script>
+function checkPlayer() {
+  let uid = document.getElementById("uid").value;
+  let diamonds = document.getElementById("diamonds").value;
+
+  if (uid == "") {
+    alert("أدخل ID اللاعب");
+    return;
+  }
+
+  let prices = {
+    100:"0.99",
+    310:"2.99",
+    520:"4.99",
+    1060:"9.99",
+    2180:"19.99"
+  };
+
+  let message =
+  "مرحباً، أريد شراء جواهر فري فاير.%0A" +
+  "ID اللاعب: " + uid + "%0A" +
+  "عدد الجواهر: " + diamonds + " 💎%0A" +
+  "السعر: $" + prices[diamonds];
+
+  window.location.href =
+  "https://wa.me/963951421872?text=" + message;
+}
+        </script><button onclick="checkPlayer()">شراء الآن</button>
