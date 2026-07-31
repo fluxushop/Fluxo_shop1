@@ -6,98 +6,116 @@
 <title>FLUXO SHOP</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
 background:#111;
 color:#fff;
+font-family:Arial,sans-serif;
+text-align:center;
+margin:0;
 }
 
 header{
 background:#ff6600;
 padding:20px;
-text-align:center;
-font-size:32px;
+font-size:30px;
 font-weight:bold;
 }
 
-.hero{
-padding:60px 20px;
-text-align:center;
+.container{
+max-width:500px;
+margin:30px auto;
+padding:20px;
+background:#222;
+border-radius:15px;
 }
 
-.hero h1{
-font-size:40px;
-margin-bottom:15px;
+input,select{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+font-size:18px;
 }
 
-.hero p{
-font-size:20px;
-color:#ddd;
-}
-
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:15px 30px;
+button{
+width:100%;
+padding:15px;
 background:#25D366;
 color:#fff;
-text-decoration:none;
+border:none;
 border-radius:10px;
 font-size:20px;
+cursor:pointer;
 }
 
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:30px;
-}
-
-.card{
-background:#222;
-padding:20px;
-border-radius:15px;
-text-align:center;
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-footer{
-background:#000;
-padding:20px;
-text-align:center;
-margin-top:30px;
+.result{
+margin-top:20px;
+font-size:20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-FLUXO SHOP
-</header>
+<header>FLUXO SHOP</header>
 
-<section class="hero">
-<h1>مرحباً بك في FLUXO SHOP</h1>
-<p>أفضل متجر لمنتجات الألعاب.</p>
+<div class="container">
 
-<a class="btn" href="https://wa.me/963951421872">
-تواصل عبر واتساب
+<h2>شحن فري فاير</h2>
+
+<input type="text" id="uid" placeholder="أدخل ID فري فاير">
+
+<select id="diamonds">
+<option value="100">100 💎</option>
+<option value="310">310 💎</option>
+<option value="520">520 💎</option>
+<option value="1060">1060 💎</option>
+<option value="2180">2180 💎</option>
+</select>
+
+<button onclick="checkPlayer()">تحقق</button>
+
+<div class="result">
+<p id="playerName"></p>
+<p id="price"></p>
+</div>
+
+<a href="https://wa.me/963951421872">
+<button style="margin-top:15px;">إرسال الطلب عبر واتساب</button>
 </a>
-</section>
 
-<section class="products">
+</div>
 
-<div class="card">
-<img src="https://via.placeholder.com/300x200" alt="">
-<h2>منتج
+<script>
+
+const prices={
+100:0.99,
+310:2.99,
+520:4.99,
+1060:9.99,
+2180:19.99
+};
+
+function checkPlayer(){
+
+let uid=document.getElementById("uid").value;
+let diamonds=document.getElementById("diamonds").value;
+
+if(uid==""){
+alert("أدخل ID أولاً");
+return;
+}
+
+document.getElementById("playerName").innerHTML=
+"ID اللاعب: "+uid;
+
+document.getElementById("price").innerHTML=
+"السعر: $"+prices[diamonds];
+
+}
+
+</script>
+
+</body>
+</html>
